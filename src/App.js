@@ -1,23 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
+import Activity from './components/Activity';
 
 function App() {
+  const activities = [
+    {name: "sleep", startTime: "0000", endTime: "0800"},
+    {name: "IE3105", startTime: "0800", endTime: "1000"}
+  ]
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {activities.map(({ name, startTime, endTime}) => 
+        <Activity name={name} startTime={startTime} endTime={endTime}/>)}
     </div>
   );
 }

@@ -11,3 +11,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.activity {
+  background: #f4f4f4;
+  border-style: solid;
+  margin: 5px;
+  max-width: 500px;
+  text-align: left;
+  text-indent: 10px;
+}
