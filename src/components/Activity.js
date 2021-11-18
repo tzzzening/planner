@@ -1,9 +1,9 @@
-const Activity = ({ name, startTime, endTime }) => {
+const Activity = ({ name, startTime, endTime, description }) => {
+    const time = startTime && (startTime + " - " + endTime)
     return (
         <div className="activity">
-            <h3>{name}</h3>
-            <p>{startTime}</p>
-            <p>{endTime}</p>
+            <h3>{name} {time}</h3>
+            <p>{description}</p>
         </div>
     )
 }

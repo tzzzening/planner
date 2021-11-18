@@ -15,8 +15,13 @@ code {
 .activity {
   background: #f4f4f4;
   border-style: solid;
-  margin: 5px;
+  margin: auto;
   max-width: 500px;
   text-align: left;
+  text-indent: 10px;
+  justify-content: space-between;
+}
+
+.header {
   text-indent: 10px;
 }
