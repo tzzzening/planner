@@ -5,9 +5,9 @@ import AddActivity from './components/AddActivity';
 import { useState } from 'react'
 
 function App() {
-  const [activities, setActivities ] = useState([
-    {key: 1, name: "sleep", startTime: "0000", endTime: "0800"},
-    {key: 2, name: "IE3105", startTime: "0800", endTime: "1000", description: "lecture 1 and 2"}
+  const [activities, setActivities] = useState([
+    {id: 0, name: "sleep", startTime: "0000", endTime: "0800"},
+    {id: 1, name: "IE3105", startTime: "0800", endTime: "1000", description: "lecture 1 and 2"}
   ])
 
 
@@ -15,12 +15,22 @@ function App() {
     setActivities([...activities, activity])
   }
 
+  const deleteActivity = (id) => {
+    setActivities(activities.filter((activity) => {
+      console.log("activity id", activity.id, "id", id)
+      console.log(activities)
+      return activity.id !== id
+    }))
+  }
+
   return (
     <div className="App">
       <Header />
       <AddActivity onAdd={addActivity}/>
-      {activities.map(({ name, startTime, endTime, description }, index) => 
-        <Activity key={index} name={name} startTime={startTime} endTime={endTime} description={description}/>)}
+      {activities.map(({ id, name, startTime, endTime, description }, index) => {
+        console.log(index)
+        return <Activity key={index} id={id} name={name} startTime={startTime} endTime={endTime} description={description} onDelete={deleteActivity}/>
+        })}
     </div>
   );
 }
