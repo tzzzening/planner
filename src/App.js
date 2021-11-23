@@ -26,11 +26,11 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <AddActivity onAdd={addActivity}/>
+      <AddActivity onAdd={addActivity} id={activities.length}/>
       {activities.map(({ id, name, startTime, endTime, description }, index) => {
         console.log(index)
         return <Activity key={index} id={id} name={name} startTime={startTime} endTime={endTime} description={description} onDelete={deleteActivity}/>
-        })}
+      })}
     </div>
   );
 }

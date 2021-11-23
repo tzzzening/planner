@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-const AddActivity = ({ onAdd }) => {
+const AddActivity = ({ onAdd, id }) => {
     const [name, setName] = useState('')
     const [startTime, setStartTime] = useState('')
     const [endTime, setEndTime] = useState('')
@@ -13,8 +13,8 @@ const AddActivity = ({ onAdd }) => {
             alert('Please add activity name')
             return
         }
-
-        onAdd({ name, startTime, endTime, description })
+       
+        onAdd({ id, name, startTime, endTime, description })
 
         setName('')
         setStartTime('')
