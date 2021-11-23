@@ -10,6 +10,7 @@ function App() {
     {id: 1, name: "IE3105", startTime: "0800", endTime: "1000", description: "lecture 1 and 2"}
   ])
 
+  const [showAddButton, setShowAddButton] = useState(false)
 
   const addActivity = (activity) => {
     setActivities([...activities, activity])
@@ -26,7 +27,8 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <AddActivity onAdd={addActivity} id={activities.length}/>
+      <button onClick={() => setShowAddButton(!showAddButton)} style={{backgroundColor: showAddButton ? 'red' : 'lightgreen'}}>{showAddButton ? "Collapse" : "Add Activity"}</button>
+      {showAddButton && <AddActivity onAdd={addActivity} id={activities.length}/>}
       {activities.map(({ id, name, startTime, endTime, description }, index) => {
         console.log(index)
         return <Activity key={index} id={id} name={name} startTime={startTime} endTime={endTime} description={description} onDelete={deleteActivity}/>

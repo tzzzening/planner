@@ -40,7 +40,7 @@ const AddActivity = ({ onAdd, id }) => {
                 <label>Description</label>
                 <input type='text' placeholder='Add description' value={description} onChange={(e) => setDescription(e.target.value)}/>
             </div>
-            <input type='submit' value='Add Activity' />
+            <input type='submit' value='Save New Activity' />
         </form>
     )
 }
