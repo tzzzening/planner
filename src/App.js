@@ -6,8 +6,8 @@ import { useState } from 'react'
 
 function App() {
   const [activities, setActivities] = useState([
-    {id: 0, name: "sleep", startTime: "0000", endTime: "0800"},
-    {id: 1, name: "IE3105", startTime: "0800", endTime: "1000", description: "lecture 1 and 2"}
+    {id: 0, name: "sleep", startTime: new Date(0,0,0,0,0), endTime: new Date(0,0,0,8,0)},
+    {id: 1, name: "IE3105", startTime: new Date(0,0,0,8,0), endTime: new Date(0,0,0,10,0), description: "lecture 1 and 2"}
   ])
 
   const [showAddButton, setShowAddButton] = useState(false)

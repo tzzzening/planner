@@ -30,11 +30,11 @@ const AddActivity = ({ onAdd, id }) => {
             </div>
             <div>
                 <label>Start time</label>
-                <input type='number' placeholder='Add starting time' value={startTime} onChange={(e) => setStartTime(e.target.value)}/>
+                <input type='time' placeholder='Add starting time' value={startTime} onChange={(e) => setStartTime(e.target.value)}/>
             </div>
             <div>
                 <label>End time</label>
-                <input type='number' placeholder='Add ending time' value={endTime} onChange={(e) => setEndTime(e.target.value)}/>
+                <input type='time' placeholder='Add ending time' value={endTime} onChange={(e) => setEndTime(e.target.value)}/>
             </div>
             <div>
                 <label>Description</label>
